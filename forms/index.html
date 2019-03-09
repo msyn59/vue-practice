@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>sample</title>
+</head>
+
+
+<body>
+  <div id="text">
+    <input v-model="message" placeholder="edit me">
+    <p>Message is: {{ message }}</p>
+  </div>
+  <div id="multiline-text">
+    <span>Multiline message is:</span>
+    <p  style="white-space: pre-line;">{{ message }}</p>
+    <br>
+    <textarea v-model="message" placeholder="add multiple lines"></textarea>
+  </div>
+  <div id="ex-checkbox">
+    <input type="checkbox" name="checkbox" id="checkbox" v-model="checked">
+    <label for="checkbox">{{ checked }}</label>
+  </div>
+  <div id="ex-multicheckbox">
+    <input type="checkbox" name="" id="A" value="A" v-model="checkedNames">
+    <label for="A">A</label>
+    <input type="checkbox" name="" id="B" value="B" v-model="checkedNames">
+    <label for="B">B</label>
+    <input type="checkbox" name="" id="C" value="C" v-model="checkedNames">
+    <label for="C">C</label>
+    <br>
+    <span>Checked names: {{ checkedNames }}</span>
+  </div>
+  <div id="ex-radio">
+    <input type="radio" name="ex-radio" id="one" value="One" v-model="picked">
+    <label for="one">One</label>
+    <br>
+    <input type="radio" name="ex-radio" id="two" value="Two" v-model="picked">
+    <label for="two">Two</label>
+    <br>    
+    <span>Picked: {{ picked }}</span>
+  </div>
+  <div id="ex-select">
+    <select v-model="selected">
+      <option disabled value="">Please select one</option>
+      <option value="a">a</option>
+      <option value="b">b</option>
+      <option value="c">c</option>
+    </select>
+    <span>Selected: {{ selected }}</span>
+  </div>
+  <div id="ex_multipleSelect">
+    <select v-model="selected" multiple>
+      <option value="a">a</option>
+      <option value="b">b</option>
+      <option value="c">c</option>
+    </select>
+    <br>
+    <span>Selected: {{ selected }}</span>
+  </div>
+  <div id="ex_vforOptionSelect">
+    <select v-model="selected">
+      <option disabled value="">Pleas select one</option>
+      <option v-for="option in options"
+              v-bind="option">
+        {{ option.text }}
+      </option>
+    </select>
+    <span>Selected: {{ selected }} </span>
+  </div>
+  <div id="ex_valueBinding">
+    <input type="radio" name="" id="" v-model="picked" value="a">
+    <span>Picked: {{ picked }}</span>
+    <input type="checkbox" name="" id="" v-model="toggle"
+      true-value="yes"
+      false-value="no">
+    <span>toggle: {{toggle}}</span>
+    <select name="" id="" v-model="selected">
+      <option value="abc">ABC</option>
+    </select>
+    <span>selected: {{selected}}</span>
+  </div>
+
+</body>
+<script src="vue-sample.js"></script>
+
+</html>
